@@ -19,7 +19,7 @@
 #     if name==None:name='index.html'
 #     return render_template(name, name=name)
 from app import app
-app.run(debug=True)
+app.run(debug=True,port=8050)
 # if __name__ == '__main__':
 #     app.debug = True
 #     app.run(host='localhost')
