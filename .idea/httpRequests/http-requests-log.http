@@ -1,0 +1,90 @@
+POST http://localhost:5000/parse_sentence
+Accept: */*
+Cache-Control: no-cache
+
+{sentence：123,user_ip:1234656}
+
+<> 2019-05-09T122437.400.html
+
+###
+
+POST http://localhost:5000/parse_sentence
+Accept: */*
+Cache-Control: no-cache
+
+{sentence：123,user_ip:1234656}
+
+<> 2019-05-09T122418.400.html
+
+###
+
+POST http://localhost:5000/parse_sentence
+Accept: */*
+Cache-Control: no-cache
+
+{sentence：123,user_ip:1234656}
+
+<> 2019-05-09T122347.400.html
+
+###
+
+POST http://localhost:5000/parse_sentence
+Accept: */*
+Cache-Control: no-cache
+
+{sentence：123,user_ip:1234656}
+
+<> 2019-05-09T122312.400.html
+
+###
+
+POST http://localhost:5000/parse_sentence
+Accept: */*
+Cache-Control: no-cache
+
+{sentence：123,user_ip:1234656}
+
+<> 2019-05-09T122309.400.html
+
+###
+
+POST http://localhost:5000/parse_sentence
+Accept: */*
+Cache-Control: no-cache
+
+{sentence：123,user_ip:1234656}
+
+<> 2019-05-09T122214.400.html
+
+###
+
+POST http://localhost:5000/parse_sentence
+Accept: */*
+Cache-Control: no-cache
+
+{sentence：123,user_ip:1234656}
+
+<> 2019-05-09T122213.400.html
+
+###
+
+POST http://localhost:5000/parse_sentence
+Accept: */*
+Cache-Control: no-cache
+
+{sentence：123,user_ip:1234656}
+
+<> 2019-05-09T122212.400.html
+
+###
+
+POST http://localhost:5000/parse_sentence
+Accept: */*
+Cache-Control: no-cache
+
+{sentence：123,user_ip:1234656}
+
+<> 2019-05-09T122048.405.html
+
+###
+

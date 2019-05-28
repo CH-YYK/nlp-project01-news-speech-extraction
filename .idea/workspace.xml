@@ -1,0 +1,1048 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/app/controller/Model.py" line="99" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="02097697-0825-49a8-ab56-48c2c498c3b1" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.4879227">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/controller/Pretreatment.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="175">
+                  <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="36" />
+                  <folding>
+                    <element signature="e#73#82#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/controller/Dependence_Parsing.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="50">
+                  <caret line="2" column="93" selection-start-line="2" selection-start-column="93" selection-end-line="2" selection-end-column="93" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/run.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="525">
+                  <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/config.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state>
+                  <caret column="23" selection-start-column="23" selection-end-column="23" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="325">
+                  <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+                  <folding>
+                    <element signature="e#43#76#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/api.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-500">
+                  <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/__init__.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="275">
+                  <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+                  <folding>
+                    <element signature="e#44#67#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/news_spider/settings.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2875">
+                  <caret line="115" selection-start-line="115" selection-end-line="115" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/timer.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="175">
+                  <caret line="15" selection-start-line="15" selection-end-line="15" />
+                  <folding>
+                    <element signature="e#43#57#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/__init__.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="401">
+                  <caret line="77" column="22" selection-start-line="77" selection-start-column="22" selection-end-line="77" selection-end-column="22" />
+                  <folding>
+                    <element signature="e#44#67#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/controller/Model.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="131">
+                  <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+                  <folding>
+                    <element signature="e#43#52#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/examples.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="474">
+                  <caret line="75" column="26" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/copy-api.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="559">
+                  <caret line="103" selection-start-line="103" selection-end-line="103" />
+                  <folding>
+                    <element signature="e#43#74#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/copy-Model.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="279">
+                  <caret line="98" column="32" selection-end-line="590" />
+                  <folding>
+                    <element signature="e#65#74#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/controller/auxiliary_functions.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="425">
+                  <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>parse</find>
+      <find>sentence</find>
+      <find>/static</find>
+      <find>embedding</find>
+      <find>judge</find>
+      <find>proces</find>
+      <find>valid_</find>
+      <find>expect</find>
+      <find>Model</find>
+      <find>parse_sentence</find>
+      <find>say_sim</find>
+      <find>singl</find>
+      <find>single_sente</find>
+      <find>process</find>
+      <find>va.id_sentences_</find>
+      <find>valid_sentences_</find>
+      <find>告诉</find>
+      <find>valid</find>
+      <find>single</find>
+      <find>single_sentence</find>
+      <find>get_says</find>
+      <find>valid_senten</find>
+      <find>|</find>
+      <find>res</find>
+      <find>sentence_pro</find>
+      <find>insert</find>
+      <find>curr.replace</find>
+      <find>sentence_process</find>
+      <find>split</find>
+      <find>ltp</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>#``@fn_timer</replace>
+      <replace>../static</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/app/controller/word2vec.py" />
+        <option value="$PROJECT_DIR$/app/controller/Word2Vec.py" />
+        <option value="$PROJECT_DIR$/app/db_creat.py" />
+        <option value="$PROJECT_DIR$/news_spider/news_spider/spiders/newSpider.py" />
+        <option value="$PROJECT_DIR$/news_spider/scrapy.cfg" />
+        <option value="$PROJECT_DIR$/news_spider/spiders/newSpider.py" />
+        <option value="$PROJECT_DIR$/news_spider/launch.py" />
+        <option value="$PROJECT_DIR$/news_spider/middleware.py" />
+        <option value="$PROJECT_DIR$/news_spider/scrapy_redis/pipelines.py" />
+        <option value="$USER_HOME$/anaconda3/lib/python3.6/site-packages/redis/client.py" />
+        <option value="$PROJECT_DIR$/news_spider/scrapy_redis/spiders.py" />
+        <option value="$PROJECT_DIR$/news_spider/scrapy_redis/tests.py" />
+        <option value="$PROJECT_DIR$/news_spider/scrapy_redis/__init__.py" />
+        <option value="$PROJECT_DIR$/news_spider/scrapy_redis/spider_links" />
+        <option value="$PROJECT_DIR$/news_spider/spider_links" />
+        <option value="$PROJECT_DIR$/news_spider/spider_links.py" />
+        <option value="$PROJECT_DIR$/news_spider/spiders/newspider.py" />
+        <option value="$PROJECT_DIR$/news_spider/scrapy_redis/dupefilter.py" />
+        <option value="$PROJECT_DIR$/news_spider/scrapy_redis/scheduler.py" />
+        <option value="$PROJECT_DIR$/news_spider/scrapy_redis/queue.py" />
+        <option value="$PROJECT_DIR$/news_spider/spiders/shopee.py" />
+        <option value="$PROJECT_DIR$/news_spider/spiders/__init__.py" />
+        <option value="$PROJECT_DIR$/scrapy.cfg" />
+        <option value="$PROJECT_DIR$/Begin.py" />
+        <option value="$PROJECT_DIR$/news_spider/middlewares.py" />
+        <option value="$PROJECT_DIR$/news_spider/MyRedis.py" />
+        <option value="$PROJECT_DIR$/news_spider/items.py" />
+        <option value="$PROJECT_DIR$/news_spider/pipelines.py" />
+        <option value="$PROJECT_DIR$/news_spider/start_urls.py" />
+        <option value="$PROJECT_DIR$/news_spider/spiders/spider.py" />
+        <option value="$PROJECT_DIR$/app/static/javascripts/demo/charts.js" />
+        <option value="$PROJECT_DIR$/app/test02.py" />
+        <option value="$PROJECT_DIR$/app/views.py" />
+        <option value="$PROJECT_DIR$/venv/bin/pip" />
+        <option value="$PROJECT_DIR$/app/config.py" />
+        <option value="$PROJECT_DIR$/app/redis.py" />
+        <option value="$PROJECT_DIR$/news_spider/settings.py" />
+        <option value="$PROJECT_DIR$/news_spider/Mysql.py" />
+        <option value="$PROJECT_DIR$/app/test01.py" />
+        <option value="$PROJECT_DIR$/app/controller/Pretreatment.py" />
+        <option value="$PROJECT_DIR$/app/controller/Dependence_Parsing.py" />
+        <option value="$PROJECT_DIR$/app/timer.py" />
+        <option value="$PROJECT_DIR$/app/templates/index.html" />
+        <option value="$PROJECT_DIR$/app/__init__.py" />
+        <option value="$PROJECT_DIR$/app/controller/auxiliary_functions.py" />
+        <option value="$PROJECT_DIR$/app/api.py" />
+        <option value="$PROJECT_DIR$/run.py" />
+        <option value="$PROJECT_DIR$/copy-Model.py" />
+        <option value="$PROJECT_DIR$/copy-api.py" />
+        <option value="$PROJECT_DIR$/examples.txt" />
+        <option value="$PROJECT_DIR$/app/controller/Model.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1600" />
+    <option name="y" value="-2" />
+    <option name="width" value="1920" />
+    <option name="height" value="1082" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="nlp-project01" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nlp-project01" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nlp-project01" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nlp-project01" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/static/images/plugins" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/static/images/plugins" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/templates" />
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/app/controller" />
+      <recent name="$PROJECT_DIR$/app/view/static" />
+    </key>
+  </component>
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:5000" />
+          <option name="urlPath" value="/parse_sentence" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{sentence：123,user_ip:1234656}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.run">
+    <configuration name="Model" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="nlp-project01" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/controller" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/controller/Model.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="nlp-project01" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="api" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="nlp-project01" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/api.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="nlp-project01" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test01" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="nlp-project01" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/test01.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="timer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="nlp-project01" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/timer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.run" />
+        <item itemvalue="Python.test01" />
+        <item itemvalue="Python.Model" />
+        <item itemvalue="Python.timer" />
+        <item itemvalue="Python.api" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="02097697-0825-49a8-ab56-48c2c498c3b1" name="Default Changelist" comment="" />
+      <created>1556714682898</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1556714682898</updated>
+      <workItem from="1556714688808" duration="778000" />
+      <workItem from="1556717422238" duration="1845000" />
+      <workItem from="1556863501993" duration="599000" />
+      <workItem from="1556887157043" duration="416000" />
+      <workItem from="1556935029987" duration="11885000" />
+      <workItem from="1557059643827" duration="20104000" />
+      <workItem from="1557116289853" duration="22838000" />
+      <workItem from="1557224503072" duration="49130000" />
+      <workItem from="1557362029812" duration="19237000" />
+      <workItem from="1557404161289" duration="119339000" />
+      <workItem from="1557660439004" duration="36457000" />
+      <workItem from="1557925389967" duration="26789000" />
+      <workItem from="1558083906247" duration="3257000" />
+      <workItem from="1558157297135" duration="30289000" />
+      <workItem from="1558743039826" duration="91512000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="Unittests_for_scrapy_redis_tests_SchedulerTest_test_scheduler - 2019.05.09 at 23h 30m 35s.xml">
+      <configuration name="Unittests for scrapy_redis.tests.SchedulerTest.test_scheduler" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_scrapy_redis_tests_SchedulerTest_test_scheduler - 2019.05.09 at 23h 43m 32s.xml">
+      <configuration name="Unittests for scrapy_redis.tests.SchedulerTest.test_scheduler" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_scrapy_redis_tests_SpiderPriorityQueueTest_test_queue - 2019.05.09 at 23h 44m 47s.xml">
+      <configuration name="Unittests for scrapy_redis.tests.SpiderPriorityQueueTest.test_queue" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_tests_py - 2019.05.10 at 10h 37m 23s.xml">
+      <configuration name="Unittests in tests.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_scrapy_redis_tests_DupeFilterTest_test_dupe_filter - 2019.05.10 at 10h 39m 00s.xml">
+      <configuration name="Unittests for scrapy_redis.tests.DupeFilterTest.test_dupe_filter" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_tests_py - 2019.05.10 at 10h 43m 52s.xml">
+      <configuration name="Unittests in tests.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_tests_py - 2019.05.10 at 10h 44m 11s.xml">
+      <configuration name="Unittests in tests.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_scrapy_redis_tests_DupeFilterTest_test_dupe_filter - 2019.05.10 at 10h 44m 21s.xml">
+      <configuration name="Unittests for scrapy_redis.tests.DupeFilterTest.test_dupe_filter" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_scrapy_redis_tests_DupeFilterTest_test_dupe_filter - 2019.05.10 at 10h 48m 24s.xml">
+      <configuration name="Unittests for scrapy_redis.tests.DupeFilterTest.test_dupe_filter" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_scrapy_redis_tests_DupeFilterTest - 2019.05.10 at 10h 49m 01s.xml">
+      <configuration name="Unittests for scrapy_redis.tests.DupeFilterTest" configurationId="tests" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="434475000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1600" y="-2" width="1920" height="1082" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.114438504" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32900432" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2857143" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.30711207" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3297414" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50106955" side_tool="true" weight="0.32575756" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49946523" visible="true" weight="0.23701298" />
+      <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49893048" weight="0.40151516" />
+      <window_info anchor="bottom" id="REST Client" order="13" weight="0.51077586" />
+      <window_info anchor="right" x="0" y="0" width="430" height="882" id="Documentation" side_tool="true" weight="0.32994652" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24958494" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" weight="0.32994652" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/anaconda3/lib/python3.6/_collections_abc.py</url>
+          <line>583</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/news_spider/scrapy_redis/queue.py</url>
+          <line>122</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/news_spider/scrapy_redis/queue.py</url>
+          <line>118</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/news_spider/scrapy_redis/tests.py</url>
+          <line>45</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/news_spider/scrapy_redis/tests.py</url>
+          <line>46</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/news_spider/scrapy_redis/tests.py</url>
+          <line>43</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/venv/bin/pip</url>
+          <line>3</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/nlp_project01$Begin.coverage" NAME="Begin Coverage Results" MODIFIED="1557819184444" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/nlp_project01$Unittests_in_tests_py.coverage" NAME="Unittests in tests.py Coverage Results" MODIFIED="1557456250996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/news_spider" />
+    <SUITE FILE_PATH="coverage/nlp_project01$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1557377027222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
+    <SUITE FILE_PATH="coverage/nlp_project01$Unittests_for_scrapy_redis_tests_SchedulerTest_test_scheduler.coverage" NAME="Unittests for scrapy_redis.tests.SchedulerTest.test_scheduler Coverage Results" MODIFIED="1557416611098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/news_spider" />
+    <SUITE FILE_PATH="coverage/nlp_project01$api.coverage" NAME="api Coverage Results" MODIFIED="1557980611755" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
+    <SUITE FILE_PATH="coverage/nlp_project01$timer.coverage" NAME="timer Coverage Results" MODIFIED="1557993963320" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
+    <SUITE FILE_PATH="coverage/nlp_project01$word2vec.coverage" NAME="word2vec Coverage Results" MODIFIED="1557110677511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/nlp_project01$bottle_test.coverage" NAME="bottle-test Coverage Results" MODIFIED="1557379471401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/nlp_project01$launch.coverage" NAME="launch Coverage Results" MODIFIED="1557464461056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/news_spider" />
+    <SUITE FILE_PATH="coverage/nlp_project01$Unittests_for_scrapy_redis_tests_DupeFilterTest_test_dupe_filter.coverage" NAME="Unittests for scrapy_redis.tests.DupeFilterTest.test_dupe_filter Coverage Results" MODIFIED="1557456280418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/news_spider" />
+    <SUITE FILE_PATH="coverage/nlp_project01$test01.coverage" NAME="test01 Coverage Results" MODIFIED="1558170909936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
+    <SUITE FILE_PATH="coverage/nlp_project01$test02.coverage" NAME="test02 Coverage Results" MODIFIED="1557718721905" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
+    <SUITE FILE_PATH="coverage/nlp_project01$Dependence_Parsing.coverage" NAME="Dependence_Parsing Coverage Results" MODIFIED="1557710430056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/controller" />
+    <SUITE FILE_PATH="coverage/nlp_project01$Unittests_for_scrapy_redis_tests_DupeFilterTest.coverage" NAME="Unittests for scrapy_redis.tests.DupeFilterTest Coverage Results" MODIFIED="1557456540555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/news_spider" />
+    <SUITE FILE_PATH="coverage/nlp_project01$run.coverage" NAME="run Coverage Results" MODIFIED="1558625168210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/nlp_project01$Unittests_for_scrapy_redis_tests_SpiderPriorityQueueTest_test_queue.coverage" NAME="Unittests for scrapy_redis.tests.SpiderPriorityQueueTest.test_queue Coverage Results" MODIFIED="1557416686461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/news_spider" />
+    <SUITE FILE_PATH="coverage/nlp_project01$Pretreatment.coverage" NAME="Pretreatment Coverage Results" MODIFIED="1557333730306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/controller" />
+    <SUITE FILE_PATH="coverage/nlp_project01$Model.coverage" NAME="Model Coverage Results" MODIFIED="1558095462853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/controller" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-245950440/builtins.py" />
+    <entry file="file://$PROJECT_DIR$/news_spider/spiders/newspider.py" />
+    <entry file="file://$PROJECT_DIR$/news_spider/scrapy_redis/dupefilter.py" />
+    <entry file="file://$PROJECT_DIR$/news_spider/scrapy_redis/scheduler.py" />
+    <entry file="file://$PROJECT_DIR$/news_spider/scrapy_redis/queue.py" />
+    <entry file="file://$PROJECT_DIR$/news_spider/launch.py" />
+    <entry file="file://$PROJECT_DIR$/news_spider/spider_links.py" />
+    <entry file="file://$PROJECT_DIR$/news_spider/spiders/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" selection-start-line="4" selection-start-column="2" selection-end-line="10" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/redis/client.py" />
+    <entry file="file://$PROJECT_DIR$/scrapy.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news_spider/middlewares.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-912">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/scrapy/item.py" />
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/_collections_abc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="743" selection-start-line="743" selection-end-line="743" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news_spider/items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news_spider/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="17" selection-start-line="17" selection-end-line="25" selection-end-column="28" />
+          <folding>
+            <element signature="e#193#223#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/numpy/lib/function_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="3043" selection-start-line="3043" selection-end-line="3043" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/javascripts/demo/charts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news_spider/spiders/spider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1102">
+          <caret line="67" column="6" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+            <marker date="1557504236706" expanded="true" signature="1411:1429" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/images/word_cloud.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/flask/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4505">
+          <caret line="1050" selection-start-line="1050" selection-end-line="1050" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news_spider/MyRedis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="45" />
+          <folding>
+            <element signature="e#24#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news_spider/start_urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1475">
+          <caret line="59" column="55" selection-start-line="59" selection-start-column="55" selection-end-line="59" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/pyvenv.cfg">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/bin/activate.csh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/bin/activate">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/setuptools.pth">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/bin/pip">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="20" selection-start-column="20" selection-end-column="20" />
+          <folding>
+            <element signature="e#159#168#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/test02.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/redis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding>
+            <element signature="e#45#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/favicon.ico">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/wc_mask.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/word_cloud.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/test01.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="605">
+          <caret line="50" column="26" lean-forward="true" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
+          <folding>
+            <element signature="e#43#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Begin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news_spider/Mysql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="65" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
+          <folding>
+            <element signature="e#24#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="776" column="32" selection-start-line="776" selection-start-column="32" selection-end-line="776" selection-end-column="32" />
+          <folding>
+            <element signature="e#15714#15755#0" expanded="true" />
+            <element signature="e#16313#16354#0" expanded="true" />
+            <element signature="e#16759#16791#0" expanded="true" />
+            <element signature="e#16837#16948#0" expanded="true" />
+            <element signature="e#16996#17038#0" expanded="true" />
+            <element signature="e#17119#17139#0" expanded="true" />
+            <element signature="e#17311#17348#0" expanded="true" />
+            <element signature="e#17421#17447#0" expanded="true" />
+            <element signature="e#17500#17507#1" expanded="true" />
+            <element signature="e#18293#18366#0" expanded="true" />
+            <element signature="e#18614#18666#0" expanded="true" />
+            <element signature="e#19270#19294#0" expanded="true" />
+            <element signature="e#19390#19426#0" expanded="true" />
+            <element signature="e#19529#19566#0" expanded="true" />
+            <element signature="e#19669#19706#0" expanded="true" />
+            <element signature="e#19809#19846#0" expanded="true" />
+            <element signature="e#20280#20336#0" expanded="true" />
+            <element signature="e#20805#20851#0" expanded="true" />
+            <element signature="e#20912#20982#0" expanded="true" />
+            <element signature="e#21076#21107#0" expanded="true" />
+            <element signature="e#21578#21620#0" expanded="true" />
+            <element signature="e#21772#21814#0" expanded="true" />
+            <element signature="e#21845#21887#0" expanded="true" />
+            <element signature="e#22169#22194#0" expanded="true" />
+            <element signature="e#22325#22368#0" expanded="true" />
+            <element signature="e#22393#22416#0" expanded="true" />
+            <element signature="e#30576#30599#0" expanded="true" />
+            <element signature="e#38661#38702#0" expanded="true" />
+            <element signature="e#39187#39240#0" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#td#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/numpy/linalg/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controller/Pretreatment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="36" />
+          <folding>
+            <element signature="e#73#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controller/Dependence_Parsing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="93" selection-start-line="2" selection-start-column="93" selection-end-line="2" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="23" selection-start-column="23" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+          <folding>
+            <element signature="e#43#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news_spider/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2875">
+          <caret line="115" selection-start-line="115" selection-end-line="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/timer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#43#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controller/auxiliary_functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copy-api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="103" selection-start-line="103" selection-end-line="103" />
+          <folding>
+            <element signature="e#43#74#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copy-Model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="98" column="32" selection-end-line="590" />
+          <folding>
+            <element signature="e#65#74#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="77" column="22" selection-start-line="77" selection-start-column="22" selection-end-line="77" selection-end-column="22" />
+          <folding>
+            <element signature="e#44#67#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="75" column="26" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-500">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controller/Model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+          <folding>
+            <element signature="e#43#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="563a61aa-b680-47c7-ab5b-1d85fc2c82f6" name="nlp01" url="http://39.97.187.115">
+        <fileTransfer host="39.97.187.115" port="22" rootFolder="/home/stu/project-01/DayandNight" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
