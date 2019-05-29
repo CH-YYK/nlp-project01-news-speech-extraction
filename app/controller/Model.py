@@ -17,7 +17,6 @@ from functools import wraps
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 web_root = os.path.abspath('.')
 path = os.path.join(web_root, 'model/mini.model')
-# path = '/home/yikang/Desktop/TextData/Project01-NLP-LTP/nlp-project01/mini_model/mini.model'
 
 LTP_DATA_DIR = os.path.join(web_root, 'ltp')  # ltp模型目录的路径
 pos_model_path = os.path.join(LTP_DATA_DIR, 'pos.model')  # 词性标注模型路径，模型名称为`pos.model`
@@ -36,7 +35,6 @@ import functools
 sys.setrecursionlimit(100000)
 
 def split(sentence: str) ->'List(str)':
-    '”“'
     # merge two quotations
     sentence = sentence.replace('”“', '，')
     N = len(sentence)
@@ -94,7 +92,7 @@ def fn_timer(function):
 
     return function_timer
 
-
+# main Model
 class Model:
     def __init__(self):
         self.name_says = defaultdict(list) #定义成全局变量有可能从sentence_process()中写入，也可能从single_sentence()写入
@@ -119,7 +117,7 @@ class Model:
         return word_frequency,vector
 
     #获取句子向量
-    #@fn_timer
+    #TODO: 计算P(w)的过程可以优化
     def sentence_embedding(self, sentence):
         # 按照论文算法Vs=1/|s|*∑a/(a+p(w))*Vw
         sentences = self.process_content(sentence).replace(' ','')
@@ -131,13 +129,10 @@ class Model:
         return sentence_vector
 
     # 欧式距离
-    # @fn_timer
     def euclidSimilar(self, inA, inB):
-
         return 1.0/(1.0+la.norm(inA-inB))
 
     # 皮尔逊相关系数
-    #@fn_timer
     def pearsonSimilar(self, inA, inB):
         if len(inA) != len(inB):
             return 0.0
@@ -154,9 +149,7 @@ class Model:
         return 0.5+0.5*(num/denom)
 
     #句子依存分析
-    #@fn_timer
     def parsing(self, sentence):
-
         words = list(self.pyltp_cut(sentence))  # pyltp分词
         # words=list(jieba.cut(sentence)) #结巴分词
         postags = list(self.postagger.postag(words))  # 词性标注
@@ -167,14 +160,8 @@ class Model:
         arcs = parser.parse(words, postags)  # 句法分析
         parser.release()  # 释放模型
         return arcs
-        # for arc in arcs:
-        #     if arc.relation=='SBV':
-        #         name=
-
-        # print ("\t".join("%s-%d:%s" % (k+1,arc.head, arc.relation) for k,arc in enumerate(arcs)))
 
     #命名实体
-    #@fn_timer
     @functools.lru_cache()
     def get_name_entity(self, strs):
         sentence = ''.join(strs)
@@ -189,28 +176,16 @@ class Model:
         recognizer.release()  # 释放模型
         return netags
 
-    #TODO: alternative valid_sentences
+    # 输入单个段落句子数组
     def valid_sentences_(self, sentences, res):
-        expect = 0.76  # 近似语句期望系数,本人根据测试估算值
-        # n_s=defaultdict(list)  #用于返回人物：言论
-        first = ''  # 第一个句子
-
-        # if len(sentences) == 1:
-        #     comb = self.single_sentence(sentences[0])
-        #     if comb:
-        #         res.append(list(comb))
-        #     return res
-
-        # res = []
-        tmp = ""
+        expect = 0.76  
+        
+        tmp = ""  # 储存前一个言论
         while sentences:
             curr = sentences.pop(0)
-            if curr[0] == '“':  # indirect post-order quotation
+            if curr[0] == '“':  # 当前句子或为 “言论在发言人前的直接引用”。
                 print(curr)
-                # TODO: deal with indirect post-order quotation
-                # saying = '。'.join([i for i in re.findall('“(.+)”', curr) if i])
-
-                people = re.search('”(.+)“|”(.+)', curr)
+                people = re.search('”(.+)“|”(.+)', curr)  # 提取发言人所在句段
                 if people:
                     people = [i for i in people.groups() if i][0]
                 elif res:
@@ -219,7 +194,7 @@ class Model:
                 else:
                     continue
 
-                saying = curr.replace(people, '')
+                saying = curr.replace(people, '')  # 剩余部分被假设为“言论”
                 if res and self.judge_pronoun(people):
                     res[-1][1] += '。' + saying
                 else:
@@ -229,14 +204,18 @@ class Model:
                         res.append([comb[0], saying])
                 continue
 
+            # 尝试提取新闻 发言人，言论内容
             combi = self.single_sentence(curr)
+            
+            # 无发言人： 当前句子属于上一个发言人的言论 或 不属于言论 
             if not combi:
-                if res and tmp and self.compare_sentence(tmp, curr) > expect:
+                if res and tmp and self.compare_sentence(tmp, curr) > expect:  #基于句子相似度判断
                     print('{} - {} : {}'.format(tmp, curr, self.compare_sentence(tmp, curr)))
                     res[-1][1] += '。' + curr
                     tmp = curr
                 continue
 
+            # 有发言人： 提取 发言人 和 言论。
             name, saying = combi
             if res and self.judge_pronoun(curr) and saying:
                 res[-1][1] += '。' + saying
@@ -245,8 +224,7 @@ class Model:
             tmp = saying
         return res
 
-    # 输入单个段落句子数组
-    # @fn_timer
+    # 输入单个段落句子数组(deprecated)
     def valid_sentences(self, sentences):
         expect = 0.75 #近似语句期望系数,本人根据测试估算值
         # n_s=defaultdict(list)  #用于返回人物：言论
@@ -277,84 +255,48 @@ class Model:
 
     # 输入一个句子，若为包含‘说’或近似词则提取人物、言论，否则返回空
     # just_name:仅进行返回名字操作 ws:整句分析不进行多个“说判断”
-    # @fn_timer
     @functools.lru_cache()
     def single_sentence(self, sentence, just_name=False, ws=False):
         sentence = '，'.join([x for x in sentence.split('，') if x])
         cuts = list(self.pyltp_cut(sentence))  # pyltp分词更合理
-        mixed = list(set(self.pyltp_cut(sentence)) & set(self.say_sim))
-        mixed.sort(key=cuts.index)
-        if not mixed: return False #若不存在说的近似词，返回False
-        # if len(mixed)>1 and just_name==False and ws==False and '，' in sentence:#句中句判断，继续进行句中句解析
-        #     part_sententce=sentence.split('，')
-        #     for part in part_sententce:
-        #         if mixed[1] in part:
-        #             index=part_sententce.index(part)
-        #             if index==0:return False
-        #             if re.findall(r'“(.+?)”', part):
-        #                 res=self.single_sentence(sentence, False, True)
-        #                 if res: self.name_says[res[0]].append(res[1])
-        #             if self.judge_pronoun('，'.join(part_sententce[index:])):
-        #                 pre_sentence='，'.join(part_sententce[:index])
-        #                 pos_sentence='，'.join(part_sententce[index:])
-        #                 pre_res=self.single_sentence(pre_sentence)
-        #                 pos_res=self.single_sentence(pos_sentence)
-        #                 if pre_res:self.name_says[pre_res[0]].append(pre_res[1])
-        #                 if pos_res:self.name_says[pos_res[0]].append(pos_res[1])
-        #                 return False
-        #             else:
-        #                 full_sentence=self.single_sentence(sentence,False,True)
-        #                 pos_sentence='，'.join(part_sententce[index:])
-        #                 pos_res = self.single_sentence(pos_sentence,False,True)
-        #                 if full_sentence: self.name_says[full_sentence[0]].append(full_sentence[1])
-        #                 if pos_res: self.name_says[pos_res[0]].append(pos_res[1])
-        #                 return False
+        # mixed = list(set(self.pyltp_cut(sentence)) & set(self.say_sim))
+        # mixed.sort(key=cuts.index)
 
-        cuts = list(self.pyltp_cut(sentence))  #确定分词
+        # if not mixed: return False 
+
+        # 判断是否有‘说’相关词：
+        mixed = [word for word in cuts if word in self.say_sim]
+        if not mixed : return False
+
         ne = self.get_name_entity(tuple(sentence)) #命名实体
         wp = self.parsing(sentence) #依存分析
         wp_relation = [w.relation for w in wp]
         postags = list(self.postagger.postag(cuts))
         name = ''
 
-        stack = []
+        stack = [] 
         for k, v in enumerate(wp):
-            # TODO: most recent noun
+            # save the most recent Noun
             if postags[k] in ['nh', 'ni', 'ns']:
                 stack.append(cuts[k])
-            if v.relation=='SBV' and (cuts[v.head-1] in self.say_sim) : #确定第一个主谓句
-
-                """
-                if postags[k] == 'r':  #代词处理，找到句子前面的真实人物
-                    # print('代词递归处理')
-                    # print(self.cut_sententce_for_name)
-                    for s in self.cut_sententce_for_name:
-                        if len(s) == len(sentence):
-                            index = self.cut_sententce_for_name.index(sentence)
-                            if index-1 < 0: return postags[k] #直接return代词
-                            name = self.single_sentence(self.cut_sententce_for_name[index - 1], True)#向上一句查找
-                        elif sentence in s:
-                            name = self.single_sentence(s, True) #以s为整句查找
-                
-                else:"""
+            
+            if v.relation=='SBV' and (cuts[v.head-1] in mixed) : #确定第一个主谓句
                 name = self.get_name(cuts[k], cuts[v.head-1], cuts, wp_relation,ne)
 
                 if just_name == True: return name #仅返回名字
-
-                # says = self.get_says(cuts[v.head:], wp_relation[v.head:])
                 says = self.get_says(cuts, wp_relation, [i.head for i in wp], v.head)
                 if not says:
                     quotations = re.findall(r'“(.+?)”', sentence)
                     if quotations: says = quotations[-1]
                 return name, says
-            if cuts[k] == '：':
+            # 若找到‘：’后面必定为言论。
+            if cuts[k] == '：': 
                 name = stack.pop()
                 says = ''.join(cuts[k+1:])
                 return name, says
         return False
 
     # 输入主语第一个词语、谓语、词语数组、词性数组，查找完整主语
-    # @fn_timer
     def get_name(self, name, predic, words, property, ne):
         index = words.index(name)
         cut_property = property[index + 1:] #截取到name后第一个词语
@@ -380,7 +322,6 @@ class Model:
         return name
 
     # 获取谓语之后的言论
-    #@fn_timer
     def get_says(self, sentence, property, heads, pos):
         # word = sentence.pop(0) #谓语
         if '：' in sentence:
@@ -411,7 +352,6 @@ class Model:
 
 
     #解析处理语句并返回给接口
-    #@fn_timer
     def sentence_process(self,sentence):
         # 文章 -->清除空行
         # 文章 -->句号分割：如果句号分割A.B, 若B存在‘说’，对B独立解析，否则判断A | B是否相似，确定A是否抛弃B句。
@@ -429,7 +369,7 @@ class Model:
             # sec = sec.replace('。”', '”。')  #当做纠正语法错误...
             # sentence_list = sec.split('。')  # 段落拆分成句子
             sentence_list = split(sec)
-            sentence_list = [s.strip() for s in sentence_list if s]
+            sentence_list = [s.strip() for s in sentence_list if s.strip()]
             self.cut_sententce_for_name = [s for s in sentence_list if s]
             # valids = self.valid_sentences(sentence_list)
             res += self.valid_sentences_(sentence_list, [])
@@ -493,7 +433,7 @@ class Model:
                     ne_list.append(words[k])
         ne_list=list(set(ne_list))
         return ' '.join(ne_list)
-
+    
     # #获取文章中关键词
     # def get_news_keywords(self,news,totalnews):
     #     print(news)
