@@ -9,6 +9,7 @@ import datetime
 import json
 from app import db
 from app import app
+from app import model
 from collections import defaultdict
 from app import crossdomain
 
@@ -22,10 +23,11 @@ def parse_sentence():
         sentence=request.form['sentence']
         user_ip = request.remote_addr
         sentence_time=datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        model = Model()
+        # model = Model()
         name_says = model.sentence_process(sentence)
         ns_json=json.dumps(name_says, ensure_ascii=False)
-
+        print(model)
+        print(ns_json)
         inserts['sentence'] = sentence
         inserts['parse_sentence']=ns_json
         inserts['user_ip']=user_ip

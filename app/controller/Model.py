@@ -35,6 +35,9 @@ import functools
 sys.setrecursionlimit(100000)
 
 def split(sentence: str) ->'List(str)':
+    """
+    split a paragraph into sentences.
+    """
     # merge two quotations
     sentence = sentence.replace('”“', '，')
     N = len(sentence)
@@ -97,24 +100,52 @@ class Model:
     def __init__(self):
         self.name_says = defaultdict(list) #定义成全局变量有可能从sentence_process()中写入，也可能从single_sentence()写入
         self.model = Word2Vec.load(path)
+        self.word_total_count = self.model.corpus_total_words
+        self.word_dict = self.model.wv.vocab
+        self.dim = 256
+        
         self.postagger = Postagger()  # 初始化实例
         self.postagger.load(pos_model_path)  # 加载模型
+        
         self.say_sim = ['诊断', '交代', '说', '说道', '指出','报道','报道说','称', '警告','所说', '告诉', '声称', '表示', '时说', '地说', '却说', '问道', '写道', '答道', '感叹', '谈到', '说出', '认为', '提到', '强调', '宣称', '表明', '明确指出', '所言', '所述', '所称', '所指', '常说', '断言', '名言', '告知', '询问', '知道', '得知', '质问', '问', '告诫', '坚称', '辩称', '否认', '还称', '指责', '透露', '坦言', '表达', '中说', '中称', '他称', '地问', '地称', '地用', '地指', '脱口而出', '一脸', '直说', '说好', '反问', '责怪', '放过', '慨叹', '问起', '喊道', '写到', '如是说', '何况', '答', '叹道', '岂能', '感慨', '叹', '赞叹', '叹息', '自叹', '自言', '谈及', '谈起', '谈论', '特别强调', '提及', '坦白', '相信', '看来', '觉得', '并不认为', '确信', '提过', '引用', '详细描述', '详述', '重申', '阐述', '阐释', '承认', '说明', '证实', '揭示', '自述', '直言', '深信', '断定', '获知', '知悉', '得悉', '透漏', '追问', '明白', '知晓', '发觉', '察觉到', '察觉', '怒斥', '斥责', '痛斥', '指摘', '回答', '请问', '坚信', '一再强调', '矢口否认', '反指', '坦承', '指证', '供称', '驳斥', '反驳', '指控', '澄清', '谴责', '批评', '抨击', '严厉批评', '诋毁', '责难', '忍不住', '大骂', '痛骂', '问及', '阐明']
         self.valid_sentence = []
+        
+        self.parser = Parser()
+        self.parser.load(par_model_path)
 
-    @functools.lru_cache()
+        self.segmentor = Segmentor()
+        self.segmentor.load(cws_model_path) 
+
+        self.recognizer = NamedEntityRecognizer()
+        self.recognizer.load(ner_model_path)
+
+
+
+    # @functools.lru_cache()
     # @fn_timer
     def get_count(self, word):
-        word_count = 0 #定义默认值
+        """
+        O(1)
+        """
+        # word_count = 0 #定义默认值
         vector = np.zeros(1) #定义默认值
-        keys = self.model.wv.vocab.keys()
+
+        if word in self.word_dict:
+            wf = self.word_dict[word].count
+            wv = self.model.wv[word]
+        else:
+            wf = 1
+            wv = np.zeros(self.dim)
+        return wf / self.total_words_count, wv
+
+        # keys = self.model.wv.vocab.keys()
         # 获取词频及词向量
-        total_words_count = sum([v.count for k,v in self.model.wv.vocab.items()]) #单词总数
-        if word in keys:
-            word_count = self.model.wv.vocab[word].count
-            vector = self.model.wv[word] # 单词词语数量
-        word_frequency=word_count/total_words_count # 词频
-        return word_frequency,vector
+        # total_words_count = sum([v.count for k,v in self.model.wv.vocab.items()]) #单词总数
+        # if word in keys:
+        #    word_count = self.model.wv.vocab[word].count
+        #    vector = self.model.wv[word] # 单词词语数量
+        # word_frequency=word_count/total_words_count # 词频
+        # return word_frequency,vector
 
     #获取句子向量
     #TODO: 计算P(w)的过程可以优化
@@ -122,11 +153,18 @@ class Model:
         # 按照论文算法Vs=1/|s|*∑a/(a+p(w))*Vw
         sentences = self.process_content(sentence).replace(' ','')
         a = 1e-3 #0.001
-        words = list(self.pyltp_cut(sentences))
-        sentence_length = len(words) #句子长度
-        sum_vector = sum([a/(a+float(self.get_count(w)[0]))*self.get_count(w)[1] for w in words])
-        sentence_vector = sum_vector/sentence_length
-        return sentence_vector
+        # words = list(self.pyltp_cut(sentences))
+        # sentence_length = len(words) #句子长度
+        # sum_vector = sum([a/(a+float(self.get_count(w)[0]))*self.get_count(w)[1] for w in words])
+
+        words = self.pyltp_cut(sentences)
+        sum_vector = np.zeros(self.dim)
+        for i, w in enumerate(words):
+            wf, wv = self.get_count(w)
+            sum_vector += a / (a + wf) * wv
+
+        # sentence_vector = sum_vector/sentence_length
+        return sum_vector / (i+1)
 
     # 欧式距离
     def euclidSimilar(self, inA, inB):
@@ -140,40 +178,40 @@ class Model:
             return 1.0
         return 0.5+0.5*np.corrcoef(inA, inB, rowvar=0)[0][1]
 
-    #余弦相似度
-    def cosSimilar(self,inA,inB):
+    # 余弦相似度
+    def cosSimilar(self, inA, inB):
         inA = np.mat(inA)
         inB = np.mat(inB)
-        num = float(inA*inB.T)
-        denom = la.norm(inA)*la.norm(inB)
+        num = float(inA * inB.T)
+        denom = la.norm(inA) * la.norm(inB)
         return 0.5+0.5*(num/denom)
 
-    #句子依存分析
+    # 句子依存分析
     def parsing(self, sentence):
-        words = list(self.pyltp_cut(sentence))  # pyltp分词
+        words = self.pyltp_cut(sentence)  # pyltp分词
         # words=list(jieba.cut(sentence)) #结巴分词
-        postags = list(self.postagger.postag(words))  # 词性标注
+        postags = self.postagger.postag(words)  # 词性标注
         # tmp=[str(k+1)+'-'+v for k,v in enumerate(words)]
         # print('\t'.join(tmp))
-        parser = Parser() # 初始化实例
-        parser.load(par_model_path)  # 加载模型
-        arcs = parser.parse(words, postags)  # 句法分析
-        parser.release()  # 释放模型
+        # parser = Parser() # 初始化实例
+        # parser.load(par_model_path)  # 加载模型
+        arcs = self.parser.parse(words, postags)  # 句法分析
+        # parser.release()  # 释放模型
         return arcs
 
-    #命名实体
-    @functools.lru_cache()
+    # 命名实体
+    # @functools.lru_cache()
     def get_name_entity(self, strs):
         sentence = ''.join(strs)
-        recognizer = NamedEntityRecognizer()  # 初始化实例
-        recognizer.load(ner_model_path)  # 加载模型
+        # recognizer = NamedEntityRecognizer()  # 初始化实例
+        # recognizer.load(ner_model_path)  # 加载模型
         # words = list(jieba.cut(sentence))  # 结巴分词
-        words = list(self.pyltp_cut(sentence))#pyltp分词更合理
-        postags = list(self.postagger.postag(words))  # 词性标注
+        words = self.pyltp_cut(sentence)#pyltp分词更合理
+        postags = self.postagger.postag(words)  # 词性标注
         netags = recognizer.recognize(words, postags)  # 命名实体识别
         # tmp=[str(k+1)+'-'+v for k,v in enumerate(netags)]
         # print('\t'.join(tmp))
-        recognizer.release()  # 释放模型
+        # recognizer.release()  # 释放模型
         return netags
 
     # 输入单个段落句子数组
@@ -225,6 +263,7 @@ class Model:
         return res
 
     # 输入单个段落句子数组(deprecated)
+    #TODO: deprecated
     def valid_sentences(self, sentences):
         expect = 0.75 #近似语句期望系数,本人根据测试估算值
         # n_s=defaultdict(list)  #用于返回人物：言论
@@ -312,6 +351,7 @@ class Model:
                 name = w + name
             else:
                 pre = False
+
         while pos:
             w = pos.pop(0)
             p = cut_property.pop(0)
@@ -419,7 +459,7 @@ class Model:
     #         return None
 
     #获取整个新闻文章中的命名实体
-    #@fn_timer
+    #TODO: This function hasn't been used.
     def get_news_ne(self,sentence):
         self.name_says = defaultdict(list)
         sections=sentence.split('\r\n') #首先切割成段落
@@ -451,18 +491,20 @@ class Model:
 
     #pyltp中文分词
     #@fn_timer
-    @functools.lru_cache()
-    def pyltp_cut(self,sentence):
-        segmentor = Segmentor()  # 初始化实例
-        segmentor.load(cws_model_path)  # 加载模型
-        words = segmentor.segment(sentence)  # 分
-        segmentor.release()  # 释放模型
+    # @functools.lru_cache()
+    def pyltp_cut(self, sentence):
+        # segmentor = Segmentor()  # 初始化实例
+        # segmentor.load(cws_model_path)  # 加载模型
+        words = self.segmentor.segment(sentence)  # 分
+        # segmentor.release()  # 释放模型
         return words
+
     #结巴词性标注
     def jieba_pseg(self,sentence):
         return pseg.cut(sentence)
 
     #结巴与哈理工词性标注比较
+    #TODO: function hasn't been used
     def jieba_compare_pyltp(self,sentence):
         sentence = sentence.replace('\r\n', '\n')
         sections = sentence.split('\n')  # 首先切割成段落
@@ -494,7 +536,7 @@ class Model:
             print(document[0])
         return sum(1 for n in document if word in n)
 
-    def idf(self,word,content,document):
+    def idf(self, word, content, document):
         """Gets the inversed document frequency"""
         return math.log10(len(content) / self.document_frequency(word,document))
 
@@ -506,6 +548,7 @@ class Model:
 
         return sum(1 for w in words if w == word)
 
+    #TODO: The function hasn't been used
     def get_keywords_of_a_ducment(self,content,document):
         content=self.process_content(content)
         documents=[self.process_content(x) for x in document]
@@ -518,9 +561,16 @@ class Model:
     def process_content(self,content):
         # print(type(content))
         # content=''.join(content)
-        content=re.sub('[+——() ? 【】“”！，：。？、~@#￥%……&*（）《 》]+', '',content)
+        content=re.sub('[+——() ? 【】“”！，：。？、~@#￥%……&*（）《 》]+', '', content)
         content=' '.join(jieba.cut(content))
         return content
+    
+    def release_all(self):
+        self.segmentor.release()
+        self.recognizer.release()
+        self.parser.release()
+        self.postagger.release()
+
 
 if __name__ == '__main__':
     sentence="据巴西《环球报》7日报道，巴西总统博索纳罗当天签署行政法令，放宽枪支进口限制，并增加民众可购买弹药的数量。\r\n《环球报》称，该法令最初的目的是放松对收藏家与猎人的限制，但现在扩大到其他条款。新法令将普通公民购买枪支的弹药数量上限提高至每年5000发，此前这一上限是每年50发。博索纳罗在法令签署仪式上称，“我们打破了垄断”“你们以前不能进口，但现在这些都结束了”。另据法新社报道，当天在首都巴西利亚的一次集会上，博索纳罗还表示，“我一直说，公共安全从家里开始的。”\r\n这不是巴西第一次放宽枪支限制。今年1月，博索纳罗上台后第15天就签署了放宽公民持枪的法令。根据该法令，希望拥有枪支的公民须向联邦警察提交申请，通过审核者可以在其住宅内装备最多4把枪支，枪支登记有效期由5年延长到10年。《环球报》称，博索纳罗在1月的电视讲话中称，要让“好人”更容易持有枪支。“人民希望购买武器和弹药，现在我们不能对人民想要的东西说不”。\r\n2004年，巴西政府曾颁布禁枪法令，但由于多数民众反对，禁令被次年的全民公投否决。博索纳罗在参加总统竞选时就表示，要进一步放开枪支持有和携带条件。他认为，放宽枪支管制，目的是为了“威慑猖狂的犯罪行为”。资料显示，2017年，巴西发生约6.4万起谋杀案，几乎每10万居民中就有31人被杀。是全球除战争地区外最危险的国家之一。\r\n不过，“以枪制暴”的政策引发不少争议。巴西《圣保罗页报》称，根据巴西民调机构Datafolha此前发布的一项调查，61%的受访者认为应该禁止持有枪支。巴西应用经济研究所研究员塞奎拉称，枪支供应增加1%，将使谋杀率提高2%。1月底，巴西民众集体向圣保罗联邦法院提出诉讼，质疑博索纳罗签署的放宽枪支管制法令。\r\n巴西新闻网站“Exame”称，博索纳罗7日签署的法案同样受到不少批评。公共安全专家萨博称，新的法令扩大了少数人的特权，不利于保护整个社会。（向南）\r\n"
