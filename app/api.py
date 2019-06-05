@@ -9,23 +9,39 @@ import datetime
 import json
 from app import db
 from app import app
+from app import model
 from collections import defaultdict
 from app import crossdomain
+
+# count 
+def print_time(verbose):
+    def decorator(func):
+        def inner(*args, **kwargs):
+            st = time.time()
+            tmp = func(*args, **kwargs)
+            if verbose:
+                print("Time spent on %s is %.4f" %(func.__name__, time.time() - st))
+            return tmp
+        inner.__name__ = func.__name__
+        return inner
+    return decorator
 
 # mysql_db=app.mysql_db
 @app.route('/parse_sentence', methods=['GET','POST'])
 @crossdomain(origin='*')
 #解析并返回句子
+@print_time(True)
 def parse_sentence():
     inserts=defaultdict(list)
     if request.method=='POST':
         sentence=request.form['sentence']
         user_ip = request.remote_addr
         sentence_time=datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        model = Model()
+        # model = Model()
         name_says = model.sentence_process(sentence)
         ns_json=json.dumps(name_says, ensure_ascii=False)
-
+        print(model)
+        print(ns_json)
         inserts['sentence'] = sentence
         inserts['parse_sentence']=ns_json
         inserts['user_ip']=user_ip
@@ -40,6 +56,7 @@ def parse_sentence():
     return None
 
 @app.route('/knowlege_graph',methods=['GET','POST'])
+@print_time(True)
 def knowlege_graph():
     res=select('word_sim')
     graph={}
@@ -100,9 +117,9 @@ def insert(tablename,*args):
 def select(tablename):
     sql='select * from '+tablename
     result = db.engine.execute(text(sql))
-    lists=result.fetchall()
+    for i in result.fetchall():
+        yield i
     result.close()
-    return lists
 
 
 # knowlege_graph()
