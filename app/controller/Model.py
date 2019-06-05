@@ -136,7 +136,7 @@ class Model:
         else:
             wf = 1
             wv = np.zeros(self.dim)
-        return wf / self.total_words_count, wv
+        return wf / self.word_total_count, wv
 
         # keys = self.model.wv.vocab.keys()
         # 获取词频及词向量
@@ -208,7 +208,7 @@ class Model:
         # words = list(jieba.cut(sentence))  # 结巴分词
         words = self.pyltp_cut(sentence)#pyltp分词更合理
         postags = self.postagger.postag(words)  # 词性标注
-        netags = recognizer.recognize(words, postags)  # 命名实体识别
+        netags = self.recognizer.recognize(words, postags)  # 命名实体识别
         # tmp=[str(k+1)+'-'+v for k,v in enumerate(netags)]
         # print('\t'.join(tmp))
         # recognizer.release()  # 释放模型
@@ -264,33 +264,33 @@ class Model:
 
     # 输入单个段落句子数组(deprecated)
     #TODO: deprecated
-    def valid_sentences(self, sentences):
-        expect = 0.75 #近似语句期望系数,本人根据测试估算值
-        # n_s=defaultdict(list)  #用于返回人物：言论
-        first = ''  #第一个句子
-        if len(sentences) == 1:
-            if self.single_sentence(sentences[0]):
-                self.name_says[self.single_sentence(sentences[0])[0]].append(self.single_sentence(sentences[0])[1])
-            return self.name_says
-        while sentences:
-            if len(sentences) == 1:
-                second = sentences.pop(0)  # 第二个句子
-            else:
-                first = first + '，' + sentences.pop(0)  # 第一个句子与上一个叠加
-                second = sentences.pop(0)  # 第二个句子
+    #def valid_sentences(self, sentences):
+    #    expect = 0.75 #近似语句期望系数,本人根据测试估算值
+    #    # n_s=defaultdict(list)  #用于返回人物：言论
+    #    first = ''  #第一个句子
+    #    if len(sentences) == 1:
+    #        if self.single_sentence(sentences[0]):
+    #            self.name_says[self.single_sentence(sentences[0])[0]].append(self.single_sentence(sentences[0])[1])
+    #        return self.name_says
+    #    while sentences:
+    #        if len(sentences) == 1:
+    #            second = sentences.pop(0)  # 第二个句子
+    #        else:
+    #            first = first + '，' + sentences.pop(0)  # 第一个句子与上一个叠加
+    #            second = sentences.pop(0)  # 第二个句子
 
-            if self.compare_sentence(first, second) > expect or (self.judge_pronoun(second) and self.single_sentence(second)) or (re.findall(r'^“(.+?)$”', second) and self.single_sentence(first)): #语句近似或者second为代词表达的句子
-                first = first+'，'+second
-            elif self.single_sentence(second) and self.single_sentence(first):
-                self.name_says[self.single_sentence(first)[0]].append(self.single_sentence(first)[1]) #将第一个语句到此，解析后存入字典中
-                first=second #第二语句赋值到第一语句
-            else:
-                first = first + '，' + second
+    #        if self.compare_sentence(first, second) > expect or (self.judge_pronoun(second) and self.single_sentence(second)) or (re.findall(r'^“(.+?)$”', second) and self.single_sentence(first)): #语句近似或者second为代词表达的句子
+    #            first = first+'，'+second
+    #        elif self.single_sentence(second) and self.single_sentence(first):
+    #            self.name_says[self.single_sentence(first)[0]].append(self.single_sentence(first)[1]) #将第一个语句到此，解析后存入字典中
+    #            first=second #第二语句赋值到第一语句
+    #        else:
+    #            first = first + '，' + second
 
-        if self.single_sentence(first):#while循环后遗留的first句子
-            self.name_says[self.single_sentence(first)[0]].append(self.single_sentence(first)[1])
+    #    if self.single_sentence(first):#while循环后遗留的first句子
+    #        self.name_says[self.single_sentence(first)[0]].append(self.single_sentence(first)[1])
 
-        return self.name_says
+    #    return self.name_says
 
     # 输入一个句子，若为包含‘说’或近似词则提取人物、言论，否则返回空
     # just_name:仅进行返回名字操作 ws:整句分析不进行多个“说判断”
@@ -403,7 +403,7 @@ class Model:
         sections = sentence.split('\n') #首先切割成段落
         sections = [s for s in sections if s.strip()]
         valids=''
-        # TODO:
+        
         res = []
         for sec in sections: #段落
             # sec = sec.replace('。”', '”。')  #当做纠正语法错误...
@@ -460,19 +460,19 @@ class Model:
 
     #获取整个新闻文章中的命名实体
     #TODO: This function hasn't been used.
-    def get_news_ne(self,sentence):
-        self.name_says = defaultdict(list)
-        sections=sentence.split('\r\n') #首先切割成段落
-        sections = [s for s in sections if s.strip()]
-        ne_list = []
-        for sec in sections: #段落
-            words = list(self.pyltp_cut(sentence))
-            nes = self.get_name_entity(tuple(sec))
-            for k, v in enumerate(nes):
-                if v != 'O':
-                    ne_list.append(words[k])
-        ne_list=list(set(ne_list))
-        return ' '.join(ne_list)
+    # def get_news_ne(self,sentence):
+    #     self.name_says = defaultdict(list)
+    #     sections=sentence.split('\r\n') #首先切割成段落
+    #     sections = [s for s in sections if s.strip()]
+    #     ne_list = []
+    #     for sec in sections: #段落
+    #         words = list(self.pyltp_cut(sentence))
+    #         nes = self.get_name_entity(tuple(sec))
+    #         for k, v in enumerate(nes):
+    #             if v != 'O':
+    #                 ne_list.append(words[k])
+    #     ne_list=list(set(ne_list))
+    #     return ' '.join(ne_list)
     
     # #获取文章中关键词
     # def get_news_keywords(self,news,totalnews):
@@ -505,28 +505,28 @@ class Model:
 
     #结巴与哈理工词性标注比较
     #TODO: function hasn't been used
-    def jieba_compare_pyltp(self,sentence):
-        sentence = sentence.replace('\r\n', '\n')
-        sections = sentence.split('\n')  # 首先切割成段落
-        sections = [s for s in sections if s.strip()]
-        for sec in sections:  # 段落
-            sentence_list = sec.split('。')  # 段落拆分成句子
-            sentence_list = [s for s in sentence_list if s]
-            for sl in sentence_list:
-                jieba_cut = list(jieba.cut(sl))
-                jieba_pseg = list(self.jieba_pseg(sl))
-                print("pyltp 分词：")
-                pyltp=list(self.pyltp_cut(sl)) #pyltp分词
-                print(pyltp)
-                print("结巴分词：")
-                print(jieba_cut)
-                print("pyltp词性标注：")
-                pyltp_pseg=list(self.postagger.postag(jieba_cut))
-                print(pyltp_pseg)
-                print("结巴词性标注：")
-                print(jieba_pseg)
-                parsed=[(x.head,x.relation) for x in list(self.parsing(sl))]
-                print(parsed)
+    # def jieba_compare_pyltp(self,sentence):
+    #     sentence = sentence.replace('\r\n', '\n')
+    #     sections = sentence.split('\n')  # 首先切割成段落
+    #     sections = [s for s in sections if s.strip()]
+    #     for sec in sections:  # 段落
+    #         sentence_list = sec.split('。')  # 段落拆分成句子
+    #         sentence_list = [s for s in sentence_list if s]
+    #         for sl in sentence_list:
+    #             jieba_cut = list(jieba.cut(sl))
+    #             jieba_pseg = list(self.jieba_pseg(sl))
+    #             print("pyltp 分词：")
+    #             pyltp=list(self.pyltp_cut(sl)) #pyltp分词
+    #             print(pyltp)
+    #             print("结巴分词：")
+    #             print(jieba_cut)
+    #             print("pyltp词性标注：")
+    #             pyltp_pseg=list(self.postagger.postag(jieba_cut))
+    #             print(pyltp_pseg)
+    #             print("结巴词性标注：")
+    #             print(jieba_pseg)
+    #             parsed=[(x.head,x.relation) for x in list(self.parsing(sl))]
+    #             print(parsed)
 
     def document_frequency(self,word,document):
         if sum(1 for n in document if word in n)==0:
@@ -549,14 +549,14 @@ class Model:
         return sum(1 for w in words if w == word)
 
     #TODO: The function hasn't been used
-    def get_keywords_of_a_ducment(self,content,document):
-        content=self.process_content(content)
-        documents=[self.process_content(x) for x in document]
-        words = set(content.split())
-        tfidf = [(w, self.tf(w,content) * self.idf(w,content,documents)) for w in words]
-        tfidf = sorted(tfidf, key=lambda x: x[1], reverse=True)
-        tfidf=' '.join([w for w,t in tfidf[:5]]) #取前5为关键词
-        return tfidf
+    # def get_keywords_of_a_ducment(self,content,document):
+    #     content=self.process_content(content)
+    #     documents=[self.process_content(x) for x in document]
+    #     words = set(content.split())
+    #     tfidf = [(w, self.tf(w,content) * self.idf(w,content,documents)) for w in words]
+    #     tfidf = sorted(tfidf, key=lambda x: x[1], reverse=True)
+    #     tfidf=' '.join([w for w,t in tfidf[:5]]) #取前5为关键词
+    #     return tfidf
 
     def process_content(self,content):
         # print(type(content))
