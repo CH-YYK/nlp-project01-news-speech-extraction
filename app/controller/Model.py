@@ -1,12 +1,7 @@
 # -*- coding: utf-8 -*-
-
-# auxiliary function
-
-#@author:yangsong
 import os
 import jieba
 import re
-import math
 import time
 from gensim.models import Word2Vec
 import numpy as np
@@ -14,6 +9,14 @@ from numpy import linalg as la
 import logging
 from collections import defaultdict
 from functools import wraps
+import sys
+from pyltp import Postagger
+from pyltp import Parser
+from pyltp import NamedEntityRecognizer
+from pyltp import Segmentor
+import jieba.posseg as pseg
+import functools
+
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 web_root = os.path.abspath('.')
 path = os.path.join(web_root, 'model/mini.model')
@@ -24,15 +27,6 @@ par_model_path = os.path.join(LTP_DATA_DIR, 'parser.model')  # 依存句法分�
 ner_model_path = os.path.join(LTP_DATA_DIR, 'ner.model')  # 命名实体识别模型路径，模型名称为`pos.model`
 cws_model_path = os.path.join(LTP_DATA_DIR, 'cws.model')  # 分词模型路径，模型名称为`cws.model`
 
-import sys
-
-from pyltp import Postagger
-from pyltp import Parser
-from pyltp import NamedEntityRecognizer
-from pyltp import Segmentor
-import jieba.posseg as pseg
-import functools
-sys.setrecursionlimit(100000)
 
 def split(sentence: str) ->'List(str)':
     """
@@ -96,7 +90,7 @@ def fn_timer(function):
     return function_timer
 
 # main Model
-class Model:
+class Model(object):
     def __init__(self):
         self.name_says = defaultdict(list) #定义成全局变量有可能从sentence_process()中写入，也可能从single_sentence()写入
         self.model = Word2Vec.load(path)

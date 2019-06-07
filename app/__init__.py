@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-
-#@author:yangsong
-
 from flask import Flask
 from sqlalchemy import create_engine
 app = Flask(__name__)
