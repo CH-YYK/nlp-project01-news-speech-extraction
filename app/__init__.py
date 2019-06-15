@@ -77,9 +77,9 @@ logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
 DIALECT = 'mysql'
 DRIVER = 'pymysql'
 USERNAME = 'root'
-PASSWORD = 'A1@2019@me'
-HOST = 'cdb-q1mnsxjb.gz.tencentcdb.com'
-PORT = '10102'
+PASSWORD = 'Give your password here'
+HOST = 'use your host of database'
+PORT = 'your port'
 DATABASE = 'DayandNight'
 
 SQLALCHEMY_DATABASE_URI = '{}+{}://{}:{}@{}:{}/{}?charset=utf8'.format(
